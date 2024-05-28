@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <table class="table table-striped" id="table1">
+                    <table class="table table-striped table-bordered" id="table1">
                         <thead>
                             <tr>
                                 <th class="text-center" width="10%">No</th>

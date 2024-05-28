@@ -44,7 +44,7 @@
         </div>
         <div class="sidebar-menu">
             <ul class="menu">
-                <li class="sidebar-title">Menu</li>
+                <li class="sidebar-title">Dashboard</li>
 
                 <li class="sidebar-item {{ Request::is('/') ? 'active' : '' }}">
                     <a href="/" class="sidebar-link">
@@ -52,6 +52,7 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
+                <li class="sidebar-title">Master Data</li>
                 <li class="sidebar-item {{ Request::is('rekening*') ? 'active' : '' }}">
                     <a href="{{ route('rekening.index') }}" class="sidebar-link">
                         <i class="bi bi-credit-card"></i>
@@ -62,6 +63,13 @@
                     <a href="{{ route('periode.index') }}" class="sidebar-link">
                         <i class="bi bi-calendar-fill"></i>
                         <span>Periode</span>
+                    </a>
+                </li>
+                <li class="sidebar-title">Target</li>
+                <li class="sidebar-item {{ Request::is('target*') ? 'active' : '' }}">
+                    <a href="{{ route('target.index') }}" class="sidebar-link">
+                        <i class="bi bi-check-square"></i>
+                        <span>Target</span>
                     </a>
                 </li>
             </ul>

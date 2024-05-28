@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-    Rekening
+    Target
 @endsection
 
 @section('css')
@@ -15,7 +15,7 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Rekening</h3>
+                    <h3>Target</h3>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -24,7 +24,7 @@
                                 <a href="/">Dashboard</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                Rekening
+                                Target
                             </li>
                         </ol>
                     </nav>
@@ -43,11 +43,11 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div>
-                                Data Rekening
+                                Data Target
                             </div>
                         </div>
                         <div class="col-md-6 text-end">
-                            <a href="{{ route('rekening.create') }}" class="btn-btn primary">
+                            <a href="{{ route('target.create') }}" class="btn-btn primary">
                                 <span class="fa-fw select-all fas"></span> Tambah Data
                             </a>
                         </div>
@@ -60,19 +60,23 @@
                                 <th class="text-center" width="10%">No</th>
                                 <th>Kode Rekening</th>
                                 <th>Nama Rekening</th>
+                                <th>Target Rp.</th>
+                                <th>Periode</th>
                                 <th class="text-center" width="10%"><span class="fa-fw select-all fas"></span></th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($rekening as $key => $row)
+                            @foreach ($target as $key => $row)
                                 <tr>
                                     <td class="text-center">{{ $key +1 }}</td>
                                     <td class="text-center">{{ $row->kode_rekening }}</td>
-                                    <td>{{ $row->nama_rekening }}</td>
+                                    <td>{{ $row->rekening->nama_rekening }}</td>
+                                    <td class="text-end">{{ number_format($row->target) }}</td>
+                                    <td class="text-center">{{ $row->periode->awal_masa }} - {{ $row->periode->akhir_masa }}</td>
                                     <td class="text-center">
                                         <div class="d-flex">
-                                            <a href="{{ route('rekening.edit', $row->rekening_id) }}" class="btn btn-sm btn-warning"><span class="fa-fw select-all fas"></span></a>
-                                            <form action="{{ route('rekening.destroy', $row->rekening_id) }}" method="POST">
+                                            <a href="{{ route('target.edit', $row->target_id) }}" class="btn btn-sm btn-warning"><span class="fa-fw select-all fas"></span></a>
+                                            <form action="{{ route('target.destroy', $row->target_id) }}" method="POST">
                                                 @csrf
                                                 @method('delete')
                                                 <button onclick="return confirm('Apakah anda yakin mengapus ?')"

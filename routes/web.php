@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PeriodeController;
 use App\Http\Controllers\RekeningController;
+use App\Http\Controllers\TargetController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +23,4 @@ Route::get('/', function () {
 // Route::resource('dashboard', DashboardController::class);
 Route::resource('rekening', RekeningController::class);
 Route::resource('periode', PeriodeController::class);
+Route::resource('target', TargetController::class);
