@@ -58,6 +58,12 @@
                         <span>Rekening</span>
                     </a>
                 </li>
+                <li class="sidebar-item {{ Request::is('periode*') ? 'active' : '' }}">
+                    <a href="{{ route('periode.index') }}" class="sidebar-link">
+                        <i class="bi bi-calendar-fill"></i>
+                        <span>Periode</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
