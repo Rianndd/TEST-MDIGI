@@ -27,4 +27,8 @@ class TransaksiHarian extends Model
     {
         return $this->belongsTo(Rekening::class, 'kode_rekening', 'kode_rekening');
     }
+    public function target()
+    {
+        return $this->belongsTo(Target::class, 'kode_rekening', 'kode_rekening');
+    }
 }

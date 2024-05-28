@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PeriodeController;
 use App\Http\Controllers\RekeningController;
 use App\Http\Controllers\TargetController;
@@ -26,3 +27,5 @@ Route::resource('rekening', RekeningController::class);
 Route::resource('periode', PeriodeController::class);
 Route::resource('target', TargetController::class);
 Route::resource('transaksi_harian', TransaksiHarianController::class);
+Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
+Route::get('/laporan/pendapatan', [LaporanController::class, 'pendapatan'])->name('laporan.pendapatan');

@@ -77,6 +77,13 @@
                         <span>Transaksi Harian</span>
                     </a>
                 </li>
+                <li class="sidebar-title">laporan</li>
+                <li class="sidebar-item {{ Request::is('laporan*') ? 'active' : '' }}">
+                    <a href="{{ route('laporan.index') }}" class="sidebar-link">
+                        <i class="bi bi-printer"></i>
+                        <span>laporan</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

@@ -15,11 +15,11 @@ class PeriodeSeeder extends Seeder
     {
         Periode::create([
             'awal_masa' => '2021-01-01',
-            'akhir_masa' => '2021-01-31',
+            'akhir_masa' => '2021-12-31',
         ]);
         Periode::create([
             'awal_masa' => '2022-01-01',
-            'akhir_masa' => '2022-01-31',
+            'akhir_masa' => '2022-12-31',
         ]);
     }
 }
