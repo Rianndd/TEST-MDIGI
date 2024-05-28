@@ -44,8 +44,6 @@
         </div>
         <div class="sidebar-menu">
             <ul class="menu">
-                <li class="sidebar-title">Dashboard</li>
-
                 <li class="sidebar-item {{ Request::is('/') ? 'active' : '' }}">
                     <a href="/" class="sidebar-link">
                         <i class="bi bi-grid-fill"></i>
@@ -70,6 +68,13 @@
                     <a href="{{ route('target.index') }}" class="sidebar-link">
                         <i class="bi bi-check-square"></i>
                         <span>Target</span>
+                    </a>
+                </li>
+                <li class="sidebar-title">Transaksi</li>
+                <li class="sidebar-item {{ Request::is('transaksi_harian*') ? 'active' : '' }}">
+                    <a href="{{ route('transaksi_harian.index') }}" class="sidebar-link">
+                        <i class="bi bi-currency-dollar"></i>
+                        <span>Transaksi Harian</span>
                     </a>
                 </li>
             </ul>
